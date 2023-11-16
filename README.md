@@ -1,1 +1,1 @@
-# lfp_soc_ml
+# LFP battery SOC prediction project
