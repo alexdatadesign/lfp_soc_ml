@@ -19,19 +19,22 @@ Additionally, an accurate State of Charge (SOC) level is essential for Solar Pho
 
 # The main idea behind solution and reasoning
 
-Coulomb counting (current integration) method gives an accurate result for SOC when we have properly calibrated current sensor and periodic synchoronization with 100% SOC. But it suffers from cumulative error over the time especially when battery is not fully charged over the long period.
+The Coulomb counting (current integration) method provides accurate State of Charge (SOC) results when equipped with a properly calibrated current sensor and periodic synchronization with 100% SOC. However, it is susceptible to cumulative errors, particularly during extended periods when the battery is not fully charged.
 
-[example graph]
+Here is the example of corrected and raw coulomb counting from bms:
 
-To remedy cumulative error in coulomb counting we can correct this error by the prediction provided with neural network or other machine learning model.
+![](https://github.com/alexdatadesign/lfp_soc_ml/blob/copy_from_prod/docs/Screenshot%202023-11-20%20at%2017.59.36.png)
+
+
+To address cumulative errors in Coulomb counting, a potential solution is to use a prediction mechanism using neural networks or other machine learning models. This approach can help correct errors and enhance the overall accuracy of SOC estimation, mitigating the impact of extended periods without full battery charging.
 
 # Data collection
 
 The data has been collected from a home installation battery system using a battery management system (BMS).
 
-The system features a 14 kWh Lithium Iron Phosphate (LFP) battery with an 8s2p configuration, consisting of 16 EVE 280 kWh cells.
+The system features a 14 kWh Lithium Iron Phosphate (LFP) battery with an 8s2p configuration, consisting of 16 EVE 280k cells.
 
-We stored the following metrics from BMS for several weeks in InfluxDB:
+Various metrics from the BMS have been stored in InfluxDB over several weeks, allowing for comprehensive monitoring and analysis.
 
 ```
  #   Column
@@ -60,10 +63,14 @@ All steps are covered in Jupyter notebook file: `notebooks/soc_exploration.ipynb
 
 XGBoost has been used for modeling with some feature engineering.
 
-The target variable is a SOC value shall be used for SOC value correction calculated by coulomb counting method.
+The target variable is a SOC value that will be used for correcting SOC values calculated by the Coulomb counting method.
 
-Feel free to explore and contribute.
+Feel free to explore the notebook and contribute to further analysis or improvements.
 
 # Results
 
-![](docs/Screenshot 2023-11-20 at 17.20.47.png)
+![](https://github.com/alexdatadesign/lfp_soc_ml/blob/main/docs/Screenshot%202023-11-20%20at%2017.20.47.png)
+
+The model, in general, demonstrates greater accuracy in non-flat regions of the battery charge curve.
+
+It's important to acknowledge and consider this characteristic when interpreting the model's results and assessing its strengths and limitations.
