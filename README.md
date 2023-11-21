@@ -63,7 +63,8 @@ See additional details in `soc_data_prep.py`, the prepared data is in the `/data
 
 # Data exploration and modeling
 
-All steps are covered in Jupyter notebook file: [notebooks/soc_exploration.ipynb](https://github.com/alexdatadesign/lfp_soc_ml/notebooks/soc_exploration.ipynb)
+All steps are covered in Jupyter notebook file: [notebooks/soc_exploration.ipynb](https://github.com/alexdatadesign/lfp_soc_ml/blob/main/notebooks/soc_exploration.ipynb)
+
 
 ![soc machine learning model](docs/SOC_Model.svg)
 
