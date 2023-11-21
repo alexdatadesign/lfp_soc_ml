@@ -65,7 +65,9 @@ See additional details in `soc_data_prep.py`, the prepared data is in the `/data
 
 All steps are covered in Jupyter notebook file: [notebooks/soc_exploration.ipynb](https://github.com/alexdatadesign/lfp_soc_ml/notebooks/soc_exploration.ipynb)
 
-XGBoost has been used for modeling with some feature engineering.
+![soc machine learning model](docs/SOC_model.svg)
+
+In general, we are predicting the current SOC value based on the past 15 minutes of BMS data. So, partially, it's a time series problem involving current battery state measurements. XGBoost has been used for modeling, along with some feature engineering.
 
 The target variable is a SOC value that will be used for correcting SOC values calculated by the Coulomb counting method.
 
