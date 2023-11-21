@@ -78,7 +78,7 @@ Feel free to explore the notebook and contribute to further analysis or improvem
 
 ![](https://github.com/alexdatadesign/lfp_soc_ml/blob/main/docs/Screenshot%202023-11-20%20at%2017.20.47.png)
 
-The model, in general, demonstrates greater accuracy in non-flat regions of the battery charge curve.
+The root mean square error (RMSE) is about 0.15. The model, in general, demonstrates greater accuracy in non-flat regions of the battery charge curve.
 
 It's important to acknowledge and consider this characteristic when interpreting the model's results and assessing its strengths and limitations.
 
@@ -118,3 +118,4 @@ This might be implemented as a centralized data collection in the cloud.
 
 - [The State of Charge Estimating Methods for Battery: A Review](https://www.hindawi.com/journals/isrn/2013/953792/)
 - [ESPHOME BMS Integration componets, a lot of BMS supported](https://github.com/syssi?tab=repositories)
+- [EVE LF280K cell product specification](https://www.imrbatteries.com/content/eve_LF280K.pdf)
