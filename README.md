@@ -102,6 +102,7 @@ Here is the steps to deploy system in production:
 - Prepare data by running `soc_data_prep.py`
 - Train the model with `soc_train.py`; the model will be saved in `soc_model.json`.
 - Use `soc_predict.py` to obtain the currently predicted SOC value.
+- An example application of the real SOC with applied corrections can be found in `powerwall-soc.py`.
 
 
 
