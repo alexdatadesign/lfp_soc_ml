@@ -53,10 +53,6 @@ df2.loc[:,'calculated_soc'] = df2.calculated_soc.clip(0, 100.0)
 df2 = df2.drop(columns=['reset_cond', 'reset_cond2'])
 
 
-# Select only trusted data (24h after SOC reset)
-cycles_row_max = 24 * 60 * 60 / 10 
-df2 = df2.loc[df2.cycle_row < cycles_row_max]
-
 
 # # Training
 
@@ -69,8 +65,12 @@ df2['roll_v_90'] = df2.bms_average_cell_voltage.rolling(90).mean()
 df2['roll_c_90'] = df2.bms_current.rolling(90).mean()
 df2['temp_roll_90'] = df2.bms_temperature_2.rolling(90).mean()
 
-
 df2 = df2.dropna()
+
+# Select only trusted data (24h after SOC reset)
+cycles_row_max = 24 * 60 * 60 / 10 
+df2 = df2.loc[df2.cycle_row < cycles_row_max]
+
 
 model = xgb.XGBRegressor(n_estimators=250, max_depth=10, eta=0.3, subsample=0.7, colsample_bytree=0.8)
 
