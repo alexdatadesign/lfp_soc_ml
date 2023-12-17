@@ -65,6 +65,10 @@ See additional details in `soc_data_prep.py`, the prepared data is in the `/data
 
 All steps are covered in Jupyter notebook file: [notebooks/soc_exploration.ipynb](https://github.com/alexdatadesign/lfp_soc_ml/blob/main/notebooks/soc_exploration.ipynb)
 
+Update: new notebook with Neural Network model. Results are pretty similar.
+[notebooks/soc_exploration_nn.ipynb](https://github.com/alexdatadesign/lfp_soc_ml/blob/main/notebooks/soc_exploration_nn.ipynb)
+
+
 
 ![soc machine learning model](docs/SOC_Model.svg)
 
